@@ -28,10 +28,11 @@ public class BallController : MonoBehaviour
         ResetBall();
     }
 
-    void ResetBall(){
+    public void ResetBall(){
         PaddleController paddle = FindObjectOfType<PaddleController>();
         transform.parent = paddle.transform;
         rb.velocity = Vector2.zero;
+        transform.localPosition = Vector2.zero + setOffset;
         ballState = BallState.Set;
     }
 
