@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7139853530312035942}
   - component: {fileID: 7139853530312035941}
   - component: {fileID: 9099205513070546713}
+  - component: {fileID: -586727875341255641}
   m_Layer: 0
   m_Name: Ball Root
   m_TagString: Ball
@@ -66,8 +67,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871c20a939f626144812fc783fa2d8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBallSpeed: 5
+  maxBallSpeed: 8
   ballLaunchSpeed: 6
+--- !u!114 &-586727875341255641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139853530312035943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b20e02443a525548bf052e405649a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: 
+  hitParticles: 
+  damage: 1
 --- !u!1 &7139853530454694979
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4032858462992330912}
   - component: {fileID: 645928896567585974}
+  - component: {fileID: 3234995967669358895}
   m_Layer: 0
   m_Name: BrickRoot
   m_TagString: Untagged
@@ -49,3 +50,19 @@ MonoBehaviour:
   - {fileID: 3540380269192680816, guid: bf5b5355c13f5e5499faf373dff11179, type: 3}
   - {fileID: 4264555547660913654, guid: bb692a0151754da46bb584390e52c87c, type: 3}
   brickTypeID: 0
+--- !u!114 &3234995967669358895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4032858462992330913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f3e8c9a5712094385f1177298b96f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  health: 0
+  scoreValue: 5
+  projectScore: 0
