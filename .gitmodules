@@ -1,0 +1,6 @@
+[submodule "GameTools"]
+	path = GameTools
+	url = https://github.com/DestinMeza/GameTools.git
+[submodule "Assets/GameTools"]
+	path = Assets/GameTools
+	url = https://github.com/DestinMeza/GameTools.git
