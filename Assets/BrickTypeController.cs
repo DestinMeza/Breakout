@@ -21,6 +21,9 @@ public class BrickTypeController : MonoBehaviour
 
     public void SetBrick(int indexer){
         brickTypeID = indexer;
+        while(brickTypeID >= brickTypes.Count){
+            brickTypeID -= brickTypes.Count;
+        }
         SpriteRenderer nextBrick = brickTypes[brickTypeID].GetComponent<SpriteRenderer>();
         brick.GetComponent<SpriteRenderer>().sprite = nextBrick.sprite;
         gameObject.SetActive(true);

@@ -697,7 +697,6 @@ MonoBehaviour:
   - {fileID: 654147257}
   - {fileID: 388461139}
   - {fileID: 33580173}
-  brickParent: {fileID: 0}
   score: 0
   brickValue: 5
   bricksActive: 0

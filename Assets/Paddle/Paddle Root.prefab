@@ -175,5 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a48fadd15f2e12f4ea057ecfdbb5e116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playState: 1
   maxSpeedChange: 2
   speed: 8
+  chaseDist: 10

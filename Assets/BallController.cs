@@ -6,9 +6,11 @@ public class BallController : MonoBehaviour
 {
     public delegate void OnOutOfBounds();
     public OnOutOfBounds onOutOfBounds = delegate {};
+    public delegate void OnBallReset();
+    public OnBallReset onBallReset = delegate {};
     public enum BallState{Set, Play}
     public Vector2 setOffset = new Vector2 (0, 1);
-    BallState ballState = BallState.Set;
+    public BallState ballState = BallState.Set;
     Rigidbody2D rb;
     public float maxBallSpeed = 5;
     public float ballLaunchSpeed = 6;
@@ -34,13 +36,14 @@ public class BallController : MonoBehaviour
         rb.velocity = Vector2.zero;
         transform.localPosition = Vector2.zero + setOffset;
         ballState = BallState.Set;
+        onBallReset();
     }
 
     void SetPos(){
         transform.localPosition = Vector2.zero + setOffset;
     }
 
-    void LaunchBall(){
+    public void LaunchBall(){
         ballState = BallState.Play;
         rb.AddForce(Vector2.up * ballLaunchSpeed, ForceMode2D.Impulse);
     }
