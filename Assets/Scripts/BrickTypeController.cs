@@ -7,15 +7,29 @@ public class BrickTypeController : MonoBehaviour
     public List<GameObject> brickTypes;
     public int brickTypeID = 0;
     public GameObject brick;
+    public GameObject[] solidBricks;
+    bool solidBrick = false;
     void Start(){
         CreateBrick();
     }
     void CreateBrick(){
         if(brickTypeID < brickTypes.Count && brickTypeID >= 0){
-            GameObject brickType = brickTypes[brickTypeID];
-            brick = Instantiate(brickType);
-            brick.transform.parent = transform;
-            brick.transform.localPosition = Vector3.zero;
+            int steelBrickCheck = Random.Range(0,10);
+            if(steelBrickCheck > 8){
+                solidBrick = true;
+                int randomNumber = Random.Range(0, solidBricks.Length);
+                GameObject brickType = solidBricks[randomNumber];
+                brick = Instantiate(brickType);
+                brick.transform.parent = transform;
+                brick.transform.localPosition = Vector3.zero;
+            }
+            else{
+                solidBrick = false;
+                GameObject brickType = brickTypes[brickTypeID];
+                brick = Instantiate(brickType);
+                brick.transform.parent = transform;
+                brick.transform.localPosition = Vector3.zero;
+            }
         }
     }
 

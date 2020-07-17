@@ -19,10 +19,14 @@ public class PaddleController : MonoBehaviour
     BallController ball;
     Animator anim;
     float x;
+    bool onWall = false;
+    Collider2D collider;
+    ContactPoint2D[] contacts = new ContactPoint2D[5];
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
         ball = FindObjectOfType<BallController>();
         anim = GetComponent<Animator>();
+        collider = GetComponentInChildren<Collider2D>();
     }
 
     void Update(){
@@ -44,6 +48,8 @@ public class PaddleController : MonoBehaviour
                 }
             }
         }
+        onWall = collider.GetContacts(contacts) > 0;
+        anim.SetBool("TouchingWall", onWall);
     }
 
     void Move(float x){
@@ -62,7 +68,7 @@ public class PaddleController : MonoBehaviour
         targetDir.y = 0;
         velocityChange = Vector2.right * targetXVelocity - rb.velocity;
         velocityChange.x = Mathf.Clamp(velocityChange.x, -maxSpeedChange, maxSpeedChange);
-        rb.AddForce(Vector2.right * velocityChange);
+        rb.AddForce(Vector2.right * velocityChange, ForceMode2D.Impulse);
         anim.SetFloat("xVel", rb.velocity.x);
     }
 

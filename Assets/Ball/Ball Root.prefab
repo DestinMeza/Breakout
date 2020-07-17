@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   setOffset: {x: 0, y: 1}
   ballState: 0
-  maxBallSpeed: 4
+  maxBallSpeed: 2
   speed: 0
   ballLaunchSpeed: 2
 --- !u!114 &-586727875341255641
