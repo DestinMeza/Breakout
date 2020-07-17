@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 8317126146039457772}
   - component: {fileID: 8317126146039457773}
   - component: {fileID: 289243389542660787}
+  - component: {fileID: 4503168041733269417}
   m_Layer: 0
   m_Name: Paddle Root
   m_TagString: Untagged
@@ -158,7 +159,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7bb1f050a9c7d7c40a54589a46704323, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -176,6 +177,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playState: 1
-  maxSpeedChange: 2
-  speed: 8
-  chaseDist: 10
+  maxSpeedChange: 24
+  speed: 16
+--- !u!95 &4503168041733269417
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8317126146039457771}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67f0fbe4e1f7a1146be55b47c5cea341, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -12,11 +12,13 @@ public class BallController : MonoBehaviour
     public Vector2 setOffset = new Vector2 (0, 1);
     public BallState ballState = BallState.Set;
     Rigidbody2D rb;
-    public float maxBallSpeed = 5;
-    public float ballLaunchSpeed = 6;
-    public float maxShiftSpeed = 1;
+    public float maxBallSpeed = 12;
+    public float speed = 0;
+    public float ballLaunchSpeed = 7;
+    Animator anim;
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update(){
@@ -24,6 +26,7 @@ public class BallController : MonoBehaviour
             LaunchBall();
         }
         else if(ballState == BallState.Set) SetPos();
+        transform.up = rb.velocity;
     }
 
     void Start(){
@@ -45,14 +48,24 @@ public class BallController : MonoBehaviour
 
     public void LaunchBall(){
         ballState = BallState.Play;
+        speed = ballLaunchSpeed;
         rb.AddForce(Vector2.up * ballLaunchSpeed, ForceMode2D.Impulse);
+        transform.parent = null;
     }
     
     void FixedUpdate(){
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxShiftSpeed) * maxBallSpeed;
+        if(rb.velocity.y < 1 && ballState == BallState.Play) rb.AddForce(transform.right); 
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, maxBallSpeed) * speed;
+        anim.SetFloat("velocity", rb.velocity.magnitude);
     }
+
+    void OnCollisionEnter2D(){
+        if(maxBallSpeed >= speed )speed++;
+    }
+
     void OnTriggerExit2D(Collider2D col){
         if(col.gameObject.CompareTag("Bounds")){
+            speed = 0;
             onOutOfBounds();
             ResetBall();
         }

@@ -30,9 +30,10 @@ public class GameManager : MonoBehaviour
     void Reset(){
         mainBall.ResetBall();
         bricksActive = bricks.Count;
-        level++;
         for(int i = 0; i < bricks.Count; i++){
             bricks[i].SetBrick(level);
+            
         }
+        level++;
     }
 }

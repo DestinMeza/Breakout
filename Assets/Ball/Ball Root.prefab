@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7139853530312035941}
   - component: {fileID: 9099205513070546713}
   - component: {fileID: -586727875341255641}
+  - component: {fileID: 3556188760829805229}
   m_Layer: 0
   m_Name: Ball Root
   m_TagString: Ball
@@ -67,8 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871c20a939f626144812fc783fa2d8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBallSpeed: 8
-  ballLaunchSpeed: 6
+  setOffset: {x: 0, y: 1}
+  ballState: 0
+  maxBallSpeed: 4
+  speed: 0
+  ballLaunchSpeed: 2
 --- !u!114 &-586727875341255641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +88,25 @@ MonoBehaviour:
   hitSound: 
   hitParticles: 
   damage: 1
+--- !u!95 &3556188760829805229
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139853530312035943}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e17314b7c3d1d545b840b6f84e7bc1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7139853530454694979
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7139853530454694978}
   - component: {fileID: 7139853530454694977}
-  - component: {fileID: 7139853530454694976}
+  - component: {fileID: 2973157244981159336}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -166,8 +189,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7139853530454694976
-CircleCollider2D:
+--- !u!61 &2973157244981159336
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -180,5 +203,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
