@@ -50,6 +50,12 @@ MonoBehaviour:
   - {fileID: 3540380269192680816, guid: bf5b5355c13f5e5499faf373dff11179, type: 3}
   - {fileID: 4264555547660913654, guid: bb692a0151754da46bb584390e52c87c, type: 3}
   brickTypeID: 0
+  brick: {fileID: 0}
+  solidBricks:
+  - {fileID: 3850001577324478651, guid: 3ae07309770b3bf4e92fad306793175a, type: 3}
+  - {fileID: 6960351102035189283, guid: a69b0925096cd9f4da470c78833e1c30, type: 3}
+  solidBrick: 0
+  health: {fileID: 0}
 --- !u!114 &3234995967669358895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,3 +72,6 @@ MonoBehaviour:
   health: 0
   scoreValue: 5
   projectScore: 0
+  onDeathSetInactive: 1
+  healOnEnable: 1
+  invulnerble: 0

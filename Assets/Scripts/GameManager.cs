@@ -13,8 +13,19 @@ public class GameManager : MonoBehaviour
     public int bricksActive = 0;
     public int level = 1;
     void Awake(){
-        bricksActive = bricks.Count;
         mainBall = FindObjectOfType<BallController>();
+    }
+
+    void CheckSteelBricks(){
+        Debug.Log("Steel Bricks Counted");
+        for(int i = 0; i < bricks.Count; i++){
+            if(bricks[i].solidBrick) bricksActive--;
+        }
+    }
+    void Start(){
+        Debug.Log("Bricks counted");
+        bricksActive = bricks.Count;
+        CheckSteelBricks();
     }
     void OnEnable(){
         HealthController.onAnyDeath += IncreaseScore;
@@ -34,6 +45,7 @@ public class GameManager : MonoBehaviour
             bricks[i].SetBrick(level);
             
         }
+        CheckSteelBricks();
         level++;
     }
 }
